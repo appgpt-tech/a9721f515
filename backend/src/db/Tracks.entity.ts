@@ -15,5 +15,8 @@ duration: string;
 @Column({nullable: true})
 album: string;
 
+@Column({nullable: true})
+lyrics: string;
+
 
 }
