@@ -12,5 +12,8 @@ albumName: string;
 @Column({nullable: true})
 genre: string;
 
+@Column({nullable: true})
+rating: string;
+
 
 }
