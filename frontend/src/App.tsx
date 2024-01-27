@@ -11,7 +11,7 @@ import data from "./data";
 import { AlbumsList, AlbumsCreate, AlbumsEdit} from "./resources/Albums";
 import { TracksList, TracksCreate, TracksEdit} from "./resources/Tracks";
 import AlbumsIcon from "@mui/icons-material/Album";
-import TracksIcon from "@mui/icons-material/MusicNote"; 
+import TracksIcon from "@mui/icons-material/Audiotrack"; 
 // SUPERTOKENS
 import React from "react";
 import SuperTokens, {
