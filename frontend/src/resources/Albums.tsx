@@ -50,6 +50,7 @@ export const AlbumsList = () => (
           <TextField source="albumName" />
 <TextField source="genre" />
 <TextField source="rating" />
+<TextField source="copiesSold" />
 <NumberField source="id" /><EditButton />
 
         </DatagridConfigurable>
@@ -62,6 +63,7 @@ export const AlbumsEdit = () => (
                           <TextInput source="albumName"   />
 <TextInput source="genre"   />
 <TextInput source="rating"   />
+<TextInput source="copiesSold"   />
 <NumberInput source="id"   disabled/>
                       </SimpleForm>
                     </Edit>
@@ -73,6 +75,7 @@ export const AlbumsCreate = () => (
                                         <TextInput source="albumName"   />
 <TextInput source="genre"   />
 <TextInput source="rating"   />
+<TextInput source="copiesSold"   />
 <NumberInput source="id"   disabled/>
                                     </SimpleForm>
                                   </Create>
@@ -80,6 +83,7 @@ export const AlbumsCreate = () => (
 
 const ResourceFilters = [
       <TextInput source="q" label="Search" alwaysOn />,
+,
 ,
 ,
 ,
