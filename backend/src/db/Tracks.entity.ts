@@ -18,5 +18,8 @@ album: string;
 @Column({nullable: true})
 lyrics: string;
 
+@Column({nullable: true})
+rating: string;
+
 
 }
