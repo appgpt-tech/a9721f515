@@ -51,6 +51,7 @@ export const TracksList = () => (
 <TextField source="duration" />
 <TextField source="album" />
 <TextField source="lyrics" />
+<TextField source="rating" />
 <NumberField source="id" /><EditButton />
 
         </DatagridConfigurable>
@@ -64,6 +65,7 @@ export const TracksEdit = () => (
 <TextInput source="duration"   />
 <TextInput source="album"   />
 <TextInput source="lyrics"   />
+<TextInput source="rating"   />
 <NumberInput source="id"   disabled/>
                       </SimpleForm>
                     </Edit>
@@ -76,6 +78,7 @@ export const TracksCreate = () => (
 <TextInput source="duration"   />
 <TextInput source="album"   />
 <TextInput source="lyrics"   />
+<TextInput source="rating"   />
 <NumberInput source="id"   disabled/>
                                     </SimpleForm>
                                   </Create>
@@ -83,6 +86,7 @@ export const TracksCreate = () => (
 
 const ResourceFilters = [
       <TextInput source="q" label="Search" alwaysOn />,
+,
 ,
 ,
 ,
