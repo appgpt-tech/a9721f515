@@ -15,5 +15,8 @@ genre: string;
 @Column({nullable: true})
 rating: string;
 
+@Column({nullable: true})
+copiesSold: string;
+
 
 }
