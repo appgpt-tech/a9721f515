@@ -54,18 +54,16 @@ const ListActions = () => (
 );
 const loansTitle = () => {
   const record = useRecordContext();
-  return <span>loans {record ? `"${ record.LoanID }"` : ""}</span>;
+  return <span>loans {record ? `"${ record.loanId }"` : ""}</span>;
 };
 
 export const loansList = () => (
       <List actions={<ListActions  />} filters={ResourceFilters} >
         <DatagridConfigurable>
-          <TextField source="LoanID" />
-<ReferenceField source="Book" reference="books"  />
-<ReferenceField source="Member" reference="members"  />
-<DateField source="LoanDate" />
-<DateField source="DueDate" />
-<DateField source="ActualReturnDate" /><EditButton />
+          <TextField source="loanId" />
+<ReferenceField source="memberId" reference="members"  />
+<DateField source="issueDate" />
+<DateField source="dueDate" /><EditButton />
 
         </DatagridConfigurable>
       </List>
@@ -76,17 +74,13 @@ export const loansEdit = () => (
                       <SimpleForm>
                         <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 5 }}>
                           <Grid item xs={4}>
-<TextInput source="LoanID"   /></Grid>
+<TextInput source="loanId"   /></Grid>
 <Grid item xs={4}>
-<ReferenceInput source="Book"  reference="books"   /></Grid>
+<ReferenceInput source="memberId"  reference="members"   /></Grid>
 <Grid item xs={4}>
-<ReferenceInput source="Member"  reference="members"   /></Grid>
+<DateInput source="issueDate"   /></Grid>
 <Grid item xs={4}>
-<DateInput source="LoanDate"   /></Grid>
-<Grid item xs={4}>
-<DateInput source="DueDate"   /></Grid>
-<Grid item xs={4}>
-<DateInput source="ActualReturnDate"   /></Grid>
+<DateInput source="dueDate"   /></Grid>
                         </Grid>
                       </SimpleForm>
                     </Edit>
@@ -97,17 +91,13 @@ export const loansCreate = () => (
                                     <SimpleForm>
                                       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 5 }}>
                                         <Grid item xs={4}>
-<TextInput source="LoanID"   /></Grid>
+<TextInput source="loanId"   /></Grid>
 <Grid item xs={4}>
-<ReferenceInput source="Book"  reference="books"   /></Grid>
+<ReferenceInput source="memberId"  reference="members"   /></Grid>
 <Grid item xs={4}>
-<ReferenceInput source="Member"  reference="members"   /></Grid>
+<DateInput source="issueDate"   /></Grid>
 <Grid item xs={4}>
-<DateInput source="LoanDate"   /></Grid>
-<Grid item xs={4}>
-<DateInput source="DueDate"   /></Grid>
-<Grid item xs={4}>
-<DateInput source="ActualReturnDate"   /></Grid>
+<DateInput source="dueDate"   /></Grid>
                                       </Grid>
                                     </SimpleForm>
                                   </Create>
@@ -116,9 +106,7 @@ export const loansCreate = () => (
 const ResourceFilters = [
       <TextInput source="q" label="Search" alwaysOn />,
 ,
-<ReferenceInput source="Book" label="Book" reference="books"   alwaysOn/>,
-<ReferenceInput source="Member" label="Member" reference="members"   alwaysOn/>,
-,
+<ReferenceInput source="memberId" label="memberId" reference="members"   alwaysOn/>,
 ,
 ,
 
