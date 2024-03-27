@@ -54,16 +54,14 @@ const ListActions = () => (
 );
 const authorsTitle = () => {
   const record = useRecordContext();
-  return <span>authors {record ? `"${ record.Name }"` : ""}</span>;
+  return <span>authors {record ? `"${ record.name }"` : ""}</span>;
 };
 
 export const authorsList = () => (
       <List actions={<ListActions  />} filters={ResourceFilters} >
         <DatagridConfigurable>
-          <TextField source="Name" />
-
-<DateField source="DateOfBirth" />
-<TextField source="Nationality" /><EditButton />
+          <TextField source="name" />
+<DateField source="dateOfBirth" /><EditButton />
 
         </DatagridConfigurable>
       </List>
@@ -74,13 +72,9 @@ export const authorsEdit = () => (
                       <SimpleForm>
                         <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 5 }}>
                           <Grid item xs={4}>
-<TextInput source="Name"   /></Grid>
+<TextInput source="name"   /></Grid>
 <Grid item xs={4}>
-<TextInput source="Biography"   /></Grid>
-<Grid item xs={4}>
-<DateInput source="DateOfBirth"   /></Grid>
-<Grid item xs={4}>
-<TextInput source="Nationality"   /></Grid>
+<DateInput source="dateOfBirth"   /></Grid>
                         </Grid>
                       </SimpleForm>
                     </Edit>
@@ -91,13 +85,9 @@ export const authorsCreate = () => (
                                     <SimpleForm>
                                       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 5 }}>
                                         <Grid item xs={4}>
-<TextInput source="Name"   /></Grid>
+<TextInput source="name"   /></Grid>
 <Grid item xs={4}>
-<TextInput source="Biography"   /></Grid>
-<Grid item xs={4}>
-<DateInput source="DateOfBirth"   /></Grid>
-<Grid item xs={4}>
-<TextInput source="Nationality"   /></Grid>
+<DateInput source="dateOfBirth"   /></Grid>
                                       </Grid>
                                     </SimpleForm>
                                   </Create>
@@ -105,8 +95,6 @@ export const authorsCreate = () => (
 
 const ResourceFilters = [
       <TextInput source="q" label="Search" alwaysOn />,
-,
-,
 ,
 ,
 
