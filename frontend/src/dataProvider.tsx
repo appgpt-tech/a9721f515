@@ -8,13 +8,65 @@ import postgrestRestProvider from "@promitheus/ra-data-postgrest";
 import qs from 'qs';
 
 const fieldConfig = {
-    customers: [
+    books: [
+  {
+    "field": "Title",
+    "datatype": "String"
+  },
+  {
+    "field": "Author",
+    "datatype": "Integer"
+  },
+  {
+    "field": "ISBN",
+    "datatype": "String"
+  },
+  {
+    "field": "PublicationDate",
+    "datatype": "DateTime"
+  },
+  {
+    "field": "Genre",
+    "datatype": "String"
+  },
+  {
+    "field": "id",
+    "datatype": "Integer"
+  }
+],
+authors: [
   {
     "field": "Name",
     "datatype": "String"
   },
   {
-    "field": "Email",
+    "field": "Biography",
+    "datatype": "String"
+  },
+  {
+    "field": "DateOfBirth",
+    "datatype": "DateTime"
+  },
+  {
+    "field": "Nationality",
+    "datatype": "String"
+  },
+  {
+    "field": "id",
+    "datatype": "Integer"
+  }
+],
+members: [
+  {
+    "field": "MemberID",
+    "datatype": "String"
+  },
+  {
+    "field": "Name",
+    "datatype": "String"
+  },
+  {
+    "field": "EmailAddress",
     "datatype": "String"
   },
   {
@@ -26,7 +78,7 @@ const fieldConfig = {
     "datatype": "String"
   },
   {
-    "field": "AccountCreationDate",
+    "field": "MembershipStartDate",
     "datatype": "DateTime"
   },
   {
@@ -34,67 +86,29 @@ const fieldConfig = {
     "datatype": "Integer"
   }
 ],
-orders: [
+loans: [
   {
-    "field": "OrderID",
+    "field": "LoanID",
+    "datatype": "String"
+  },
+  {
+    "field": "Book",
     "datatype": "Integer"
   },
   {
-    "field": "CustomerID",
+    "field": "Member",
     "datatype": "Integer"
   },
   {
-    "field": "OrderDate",
+    "field": "LoanDate",
     "datatype": "DateTime"
   },
   {
-    "field": "TotalAmount",
-    "datatype": "Real"
-  },
-  {
-    "field": "Status",
-    "datatype": "String"
-  },
-  {
-    "field": "ListOfProductsServicesOrdered",
-    "datatype": "String"
-  },
-  {
-    "field": "id",
-    "datatype": "Integer"
-  }
-],
-tickets: [
-  {
-    "field": "TicketID",
-    "datatype": "Integer"
-  },
-  {
-    "field": "CustomerID",
-    "datatype": "Integer"
-  },
-  {
-    "field": "IssueDescription",
-    "datatype": "String"
-  },
-  {
-    "field": "Priority",
-    "datatype": "String"
-  },
-  {
-    "field": "Status",
-    "datatype": "String"
-  },
-  {
-    "field": "AssignedTo",
-    "datatype": "String"
-  },
-  {
-    "field": "CreationDate",
+    "field": "DueDate",
     "datatype": "DateTime"
   },
   {
-    "field": "ResolutionDate",
+    "field": "ActualReturnDate",
     "datatype": "DateTime"
   },
   {
