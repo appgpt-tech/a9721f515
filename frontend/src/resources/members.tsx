@@ -54,18 +54,15 @@ const ListActions = () => (
 );
 const membersTitle = () => {
   const record = useRecordContext();
-  return <span>members {record ? `"${ record.Name }"` : ""}</span>;
+  return <span>members {record ? `"${ record.name }"` : ""}</span>;
 };
 
 export const membersList = () => (
       <List actions={<ListActions  />} filters={ResourceFilters} >
         <DatagridConfigurable>
-          <TextField source="MemberID" />
-<TextField source="Name" />
-<EmailField source="EmailAddress" />
-<TextField source="PhoneNumber" />
-<TextField source="Address" />
-<DateField source="MembershipStartDate" /><EditButton />
+          <TextField source="name" />
+<TextField source="gender" />
+<TextField source="address" /><EditButton />
 
         </DatagridConfigurable>
       </List>
@@ -76,17 +73,11 @@ export const membersEdit = () => (
                       <SimpleForm>
                         <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 5 }}>
                           <Grid item xs={4}>
-<TextInput source="MemberID"   /></Grid>
+<TextInput source="name"   /></Grid>
 <Grid item xs={4}>
-<TextInput source="Name"   /></Grid>
+<TextInput source="gender"   /></Grid>
 <Grid item xs={4}>
-<TextInput source="EmailAddress"   /></Grid>
-<Grid item xs={4}>
-<TextInput source="PhoneNumber"   /></Grid>
-<Grid item xs={4}>
-<TextInput source="Address"   /></Grid>
-<Grid item xs={4}>
-<DateInput source="MembershipStartDate"   /></Grid>
+<TextInput source="address"   /></Grid>
                         </Grid>
                       </SimpleForm>
                     </Edit>
@@ -97,17 +88,11 @@ export const membersCreate = () => (
                                     <SimpleForm>
                                       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 5 }}>
                                         <Grid item xs={4}>
-<TextInput source="MemberID"   /></Grid>
+<TextInput source="name"   /></Grid>
 <Grid item xs={4}>
-<TextInput source="Name"   /></Grid>
+<TextInput source="gender"   /></Grid>
 <Grid item xs={4}>
-<TextInput source="EmailAddress"   /></Grid>
-<Grid item xs={4}>
-<TextInput source="PhoneNumber"   /></Grid>
-<Grid item xs={4}>
-<TextInput source="Address"   /></Grid>
-<Grid item xs={4}>
-<DateInput source="MembershipStartDate"   /></Grid>
+<TextInput source="address"   /></Grid>
                                       </Grid>
                                     </SimpleForm>
                                   </Create>
@@ -115,9 +100,6 @@ export const membersCreate = () => (
 
 const ResourceFilters = [
       <TextInput source="q" label="Search" alwaysOn />,
-,
-,
-,
 ,
 ,
 ,
