@@ -10,12 +10,14 @@ import { authProvider, apInitialize } from "./authProvider";
 import { i18nProvider } from "./i18nProvider";
 import LoginPage, { Login } from "./Login";
 import data from "./data";
-import { customersList, customersCreate, customersEdit} from "./resources/customers";
-import { ordersList, ordersCreate, ordersEdit} from "./resources/orders";
-import { ticketsList, ticketsCreate, ticketsEdit} from "./resources/tickets";
-import customersIcon from "@mui/icons-material/People";
-import ordersIcon from "@mui/icons-material/ShoppingCart";
-import ticketsIcon from "@mui/icons-material/Support"; 
+import { booksList, booksCreate, booksEdit} from "./resources/books";
+import { authorsList, authorsCreate, authorsEdit} from "./resources/authors";
+import { membersList, membersCreate, membersEdit} from "./resources/members";
+import { loansList, loansCreate, loansEdit} from "./resources/loans";
+import booksIcon from "@mui/icons-material/Book";
+import authorsIcon from "@mui/icons-material/Person";
+import membersIcon from "@mui/icons-material/People";
+import loansIcon from "@mui/icons-material/LibraryBooks"; 
 // SUPERTOKENS
 import React from "react";
 import SuperTokens, {
@@ -77,24 +79,30 @@ const App = () => (
         dashboard={Dashboard}
         
       >
-    <Resource name="customers" options={{label:"Customers"}} 
-list={customersList}
-create={customersCreate}
-edit={customersEdit}
+    <Resource name="books" options={{label:"Books"}} 
+list={booksList}
+create={booksCreate}
+edit={booksEdit}
+recordRepresentation="Title"
+icon={booksIcon}/>
+<Resource name="authors" options={{label:"Authors"}} 
+list={authorsList}
+create={authorsCreate}
+edit={authorsEdit}
 recordRepresentation="Name"
-icon={customersIcon}/>
-<Resource name="orders" options={{label:"Orders"}} 
-list={ordersList}
-create={ordersCreate}
-edit={ordersEdit}
-recordRepresentation="OrderID"
-icon={ordersIcon}/>
-<Resource name="tickets" options={{label:"Tickets"}} 
-list={ticketsList}
-create={ticketsCreate}
-edit={ticketsEdit}
-recordRepresentation="TicketID"
-icon={ticketsIcon}/>
+icon={authorsIcon}/>
+<Resource name="members" options={{label:"Members"}} 
+list={membersList}
+create={membersCreate}
+edit={membersEdit}
+recordRepresentation="Name"
+icon={membersIcon}/>
+<Resource name="loans" options={{label:"Loans"}} 
+list={loansList}
+create={loansCreate}
+edit={loansEdit}
+recordRepresentation="LoanID"
+icon={loansIcon}/>
     <CustomRoutes noLayout>
       {/*This renders the login UI on the /auth route*/}
       {getSuperTokensRoutesForReactRouterDom(reactRouterDom)}
