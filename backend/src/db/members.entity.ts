@@ -9,22 +9,13 @@ export class membersEntity {
   id: number;
 
   @Column("text",{nullable: true})
-MemberID: string;
+name: string;
 
 @Column("text",{nullable: true})
-Name: string;
+gender: string;
 
 @Column("text",{nullable: true})
-EmailAddress: string;
-
-@Column("text",{nullable: true})
-PhoneNumber: string;
-
-@Column("text",{nullable: true})
-Address: string;
-
-@Column("date",{nullable: true})
-MembershipStartDate: Date;
+address: string;
 
 
 }
