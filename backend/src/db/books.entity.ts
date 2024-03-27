@@ -9,19 +9,16 @@ export class booksEntity {
   id: number;
 
   @Column("text",{nullable: true})
-Title: string;
+title: string;
 
 @Column("integer",{nullable: true})
-Author: number;
+author: number;
 
 @Column("text",{nullable: true})
-ISBN: string;
-
-@Column("date",{nullable: true})
-PublicationDate: Date;
+isbn: string;
 
 @Column("text",{nullable: true})
-Genre: string;
+genre: string;
 
 
 }
