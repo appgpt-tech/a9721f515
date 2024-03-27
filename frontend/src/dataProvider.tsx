@@ -10,23 +10,19 @@ import qs from 'qs';
 const fieldConfig = {
     books: [
   {
-    "field": "Title",
+    "field": "title",
     "datatype": "String"
   },
   {
-    "field": "Author",
+    "field": "author",
     "datatype": "Integer"
   },
   {
-    "field": "ISBN",
+    "field": "isbn",
     "datatype": "String"
   },
   {
-    "field": "PublicationDate",
-    "datatype": "DateTime"
-  },
-  {
-    "field": "Genre",
+    "field": "genre",
     "datatype": "String"
   },
   {
@@ -36,20 +32,12 @@ const fieldConfig = {
 ],
 authors: [
   {
-    "field": "Name",
+    "field": "name",
     "datatype": "String"
   },
   {
-    "field": "Biography",
-    "datatype": "String"
-  },
-  {
-    "field": "DateOfBirth",
+    "field": "dateOfBirth",
     "datatype": "DateTime"
-  },
-  {
-    "field": "Nationality",
-    "datatype": "String"
   },
   {
     "field": "id",
@@ -58,28 +46,16 @@ authors: [
 ],
 members: [
   {
-    "field": "MemberID",
+    "field": "name",
     "datatype": "String"
   },
   {
-    "field": "Name",
+    "field": "gender",
     "datatype": "String"
   },
   {
-    "field": "EmailAddress",
+    "field": "address",
     "datatype": "String"
-  },
-  {
-    "field": "PhoneNumber",
-    "datatype": "String"
-  },
-  {
-    "field": "Address",
-    "datatype": "String"
-  },
-  {
-    "field": "MembershipStartDate",
-    "datatype": "DateTime"
   },
   {
     "field": "id",
@@ -88,27 +64,19 @@ members: [
 ],
 loans: [
   {
-    "field": "LoanID",
+    "field": "loanId",
     "datatype": "String"
   },
   {
-    "field": "Book",
+    "field": "memberId",
     "datatype": "Integer"
   },
   {
-    "field": "Member",
-    "datatype": "Integer"
-  },
-  {
-    "field": "LoanDate",
+    "field": "issueDate",
     "datatype": "DateTime"
   },
   {
-    "field": "DueDate",
-    "datatype": "DateTime"
-  },
-  {
-    "field": "ActualReturnDate",
+    "field": "dueDate",
     "datatype": "DateTime"
   },
   {
