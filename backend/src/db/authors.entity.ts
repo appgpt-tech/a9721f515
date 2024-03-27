@@ -9,16 +9,10 @@ export class authorsEntity {
   id: number;
 
   @Column("text",{nullable: true})
-Name: string;
-
-@Column("text",{nullable: true})
-Biography: string;
+name: string;
 
 @Column("date",{nullable: true})
-DateOfBirth: Date;
-
-@Column("text",{nullable: true})
-Nationality: string;
+dateOfBirth: Date;
 
 
 }
