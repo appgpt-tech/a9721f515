@@ -54,17 +54,16 @@ const ListActions = () => (
 );
 const booksTitle = () => {
   const record = useRecordContext();
-  return <span>books {record ? `"${ record.Title }"` : ""}</span>;
+  return <span>books {record ? `"${ record.title }"` : ""}</span>;
 };
 
 export const booksList = () => (
       <List actions={<ListActions  />} filters={ResourceFilters} >
         <DatagridConfigurable>
-          <TextField source="Title" />
-<ReferenceField source="Author" reference="authors"  />
-<TextField source="ISBN" />
-<DateField source="PublicationDate" />
-<TextField source="Genre" /><EditButton />
+          <TextField source="title" />
+<ReferenceField source="author" reference="authors"  />
+<TextField source="isbn" />
+<TextField source="genre" /><EditButton />
 
         </DatagridConfigurable>
       </List>
@@ -75,15 +74,13 @@ export const booksEdit = () => (
                       <SimpleForm>
                         <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 5 }}>
                           <Grid item xs={4}>
-<TextInput source="Title"   /></Grid>
+<TextInput source="title"   /></Grid>
 <Grid item xs={4}>
-<ReferenceInput source="Author"  reference="authors"   /></Grid>
+<ReferenceInput source="author"  reference="authors"   /></Grid>
 <Grid item xs={4}>
-<TextInput source="ISBN"   /></Grid>
+<TextInput source="isbn"   /></Grid>
 <Grid item xs={4}>
-<DateInput source="PublicationDate"   /></Grid>
-<Grid item xs={4}>
-<TextInput source="Genre"   /></Grid>
+<TextInput source="genre"   /></Grid>
                         </Grid>
                       </SimpleForm>
                     </Edit>
@@ -94,15 +91,13 @@ export const booksCreate = () => (
                                     <SimpleForm>
                                       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 5 }}>
                                         <Grid item xs={4}>
-<TextInput source="Title"   /></Grid>
+<TextInput source="title"   /></Grid>
 <Grid item xs={4}>
-<ReferenceInput source="Author"  reference="authors"   /></Grid>
+<ReferenceInput source="author"  reference="authors"   /></Grid>
 <Grid item xs={4}>
-<TextInput source="ISBN"   /></Grid>
+<TextInput source="isbn"   /></Grid>
 <Grid item xs={4}>
-<DateInput source="PublicationDate"   /></Grid>
-<Grid item xs={4}>
-<TextInput source="Genre"   /></Grid>
+<TextInput source="genre"   /></Grid>
                                       </Grid>
                                     </SimpleForm>
                                   </Create>
@@ -111,8 +106,7 @@ export const booksCreate = () => (
 const ResourceFilters = [
       <TextInput source="q" label="Search" alwaysOn />,
 ,
-<ReferenceInput source="Author" label="Author" reference="authors"   alwaysOn/>,
-,
+<ReferenceInput source="author" label="author" reference="authors"   alwaysOn/>,
 ,
 ,
 
