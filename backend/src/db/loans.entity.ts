@@ -9,22 +9,16 @@ export class loansEntity {
   id: number;
 
   @Column("text",{nullable: true})
-LoanID: string;
+loanId: string;
 
 @Column("integer",{nullable: true})
-Book: number;
-
-@Column("integer",{nullable: true})
-Member: number;
+memberId: number;
 
 @Column("date",{nullable: true})
-LoanDate: Date;
+issueDate: Date;
 
 @Column("date",{nullable: true})
-DueDate: Date;
-
-@Column("date",{nullable: true})
-ActualReturnDate: Date;
+dueDate: Date;
 
 
 }
