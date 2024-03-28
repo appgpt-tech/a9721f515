@@ -62,8 +62,10 @@ export const booksList = () => (
         <DatagridConfigurable>
           <TextField source="title" />
 <ReferenceField source="author" reference="authors"  />
-<TextField source="isbn" />
-<TextField source="genre" /><EditButton />
+<TextField source="ISBN" />
+<DateField source="publicationDate" />
+<TextField source="genre" />
+<TextField source="status" /><EditButton />
 
         </DatagridConfigurable>
       </List>
@@ -78,9 +80,13 @@ export const booksEdit = () => (
 <Grid item xs={4}>
 <ReferenceInput source="author"  reference="authors"   /></Grid>
 <Grid item xs={4}>
-<TextInput source="isbn"   /></Grid>
+<TextInput source="ISBN"   /></Grid>
+<Grid item xs={4}>
+<DateInput source="publicationDate"   /></Grid>
 <Grid item xs={4}>
 <TextInput source="genre"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="status"   /></Grid>
                         </Grid>
                       </SimpleForm>
                     </Edit>
@@ -95,9 +101,13 @@ export const booksCreate = () => (
 <Grid item xs={4}>
 <ReferenceInput source="author"  reference="authors"   /></Grid>
 <Grid item xs={4}>
-<TextInput source="isbn"   /></Grid>
+<TextInput source="ISBN"   /></Grid>
+<Grid item xs={4}>
+<DateInput source="publicationDate"   /></Grid>
 <Grid item xs={4}>
 <TextInput source="genre"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="status"   /></Grid>
                                       </Grid>
                                     </SimpleForm>
                                   </Create>
@@ -107,6 +117,8 @@ const ResourceFilters = [
       <TextInput source="q" label="Search" alwaysOn />,
 ,
 <ReferenceInput source="author" label="author" reference="authors"   alwaysOn/>,
+,
+,
 ,
 ,
 
