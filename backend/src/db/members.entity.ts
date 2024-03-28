@@ -9,10 +9,16 @@ export class membersEntity {
   id: number;
 
   @Column("text",{nullable: true})
+memberID: string;
+
+@Column("text",{nullable: true})
 name: string;
 
 @Column("text",{nullable: true})
-gender: string;
+emailAddress: string;
+
+@Column("text",{nullable: true})
+phoneNumber: string;
 
 @Column("text",{nullable: true})
 address: string;
