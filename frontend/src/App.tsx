@@ -10,12 +10,32 @@ import { authProvider, apInitialize } from "./authProvider";
 import { i18nProvider } from "./i18nProvider";
 import LoginPage, { Login } from "./Login";
 import data from "./data";
-import { projectsList, projectsCreate, projectsEdit} from "./resources/projects";
-import { datasetsList, datasetsCreate, datasetsEdit} from "./resources/datasets";
-import { teamMembersList, teamMembersCreate, teamMembersEdit} from "./resources/teamMembers";
-import projectsIcon from "@mui/icons-material/Eject";
-import datasetsIcon from "@mui/icons-material/Dataset";
-import teamMembersIcon from "@mui/icons-material/People"; 
+import { UsersList, UsersCreate, UsersEdit} from "./resources/Users";
+import { VendorsList, VendorsCreate, VendorsEdit} from "./resources/Vendors";
+import { CustomersList, CustomersCreate, CustomersEdit} from "./resources/Customers";
+import { InventoryList, InventoryCreate, InventoryEdit} from "./resources/Inventory";
+import { ProductsList, ProductsCreate, ProductsEdit} from "./resources/Products";
+import { ProductCategoriesList, ProductCategoriesCreate, ProductCategoriesEdit} from "./resources/ProductCategories";
+import { DiscountsList, DiscountsCreate, DiscountsEdit} from "./resources/Discounts";
+import { ShoppingCartList, ShoppingCartCreate, ShoppingCartEdit} from "./resources/ShoppingCart";
+import { OrdersList, OrdersCreate, OrdersEdit} from "./resources/Orders";
+import { OrderDetailsList, OrderDetailsCreate, OrderDetailsEdit} from "./resources/OrderDetails";
+import { PaymentsList, PaymentsCreate, PaymentsEdit} from "./resources/Payments";
+import { ReviewsList, ReviewsCreate, ReviewsEdit} from "./resources/Reviews";
+import { SupportTicketsList, SupportTicketsCreate, SupportTicketsEdit} from "./resources/SupportTickets";
+import UsersIcon from "@mui/icons-material/Person";
+import VendorsIcon from "@mui/icons-material/Store";
+import CustomersIcon from "@mui/icons-material/Person";
+import InventoryIcon from "@mui/icons-material/Inventory";
+import ProductsIcon from "@mui/icons-material/ProductionQuantityLimits";
+import ProductCategoriesIcon from "@mui/icons-material/Category";
+import DiscountsIcon from "@mui/icons-material/LocalOffer";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import OrdersIcon from "@mui/icons-material/Receipt";
+import OrderDetailsIcon from "@mui/icons-material/List";
+import PaymentsIcon from "@mui/icons-material/Payment";
+import ReviewsIcon from "@mui/icons-material/RateReview";
+import SupportTicketsIcon from "@mui/icons-material/Support"; 
 // SUPERTOKENS
 import React from "react";
 import SuperTokens, {
@@ -77,24 +97,84 @@ const App = () => (
         dashboard={Dashboard}
         
       >
-    <Resource name="projects" options={{label:"Projects"}} 
-list={projectsList}
-create={projectsCreate}
-edit={projectsEdit}
-recordRepresentation="projectName"
-icon={projectsIcon}/>
-<Resource name="datasets" options={{label:"Datasets"}} 
-list={datasetsList}
-create={datasetsCreate}
-edit={datasetsEdit}
-recordRepresentation="datasetName"
-icon={datasetsIcon}/>
-<Resource name="teamMembers" options={{label:"Team Members"}} 
-list={teamMembersList}
-create={teamMembersCreate}
-edit={teamMembersEdit}
-recordRepresentation="name"
-icon={teamMembersIcon}/>
+    <Resource name="Users" options={{label:"Users"}} 
+list={UsersList}
+create={UsersCreate}
+edit={UsersEdit}
+recordRepresentation="username"
+icon={UsersIcon}/>
+<Resource name="Vendors" options={{label:"Vendors"}} 
+list={VendorsList}
+create={VendorsCreate}
+edit={VendorsEdit}
+recordRepresentation="companyName"
+icon={VendorsIcon}/>
+<Resource name="Customers" options={{label:"Customers"}} 
+list={CustomersList}
+create={CustomersCreate}
+edit={CustomersEdit}
+recordRepresentation="customerName"
+icon={CustomersIcon}/>
+<Resource name="Inventory" options={{label:"Inventory"}} 
+list={InventoryList}
+create={InventoryCreate}
+edit={InventoryEdit}
+recordRepresentation="product"
+icon={InventoryIcon}/>
+<Resource name="Products" options={{label:"Products"}} 
+list={ProductsList}
+create={ProductsCreate}
+edit={ProductsEdit}
+recordRepresentation="productName"
+icon={ProductsIcon}/>
+<Resource name="ProductCategories" options={{label:"Product Categories"}} 
+list={ProductCategoriesList}
+create={ProductCategoriesCreate}
+edit={ProductCategoriesEdit}
+recordRepresentation="category"
+icon={ProductCategoriesIcon}/>
+<Resource name="Discounts" options={{label:"Discounts"}} 
+list={DiscountsList}
+create={DiscountsCreate}
+edit={DiscountsEdit}
+recordRepresentation="product"
+icon={DiscountsIcon}/>
+<Resource name="ShoppingCart" options={{label:"Shopping Cart"}} 
+list={ShoppingCartList}
+create={ShoppingCartCreate}
+edit={ShoppingCartEdit}
+recordRepresentation="customer"
+icon={ShoppingCartIcon}/>
+<Resource name="Orders" options={{label:"Orders"}} 
+list={OrdersList}
+create={OrdersCreate}
+edit={OrdersEdit}
+recordRepresentation="orderNumber"
+icon={OrdersIcon}/>
+<Resource name="OrderDetails" options={{label:"Order Details"}} 
+list={OrderDetailsList}
+create={OrderDetailsCreate}
+edit={OrderDetailsEdit}
+recordRepresentation="orderNumber"
+icon={OrderDetailsIcon}/>
+<Resource name="Payments" options={{label:"Payments"}} 
+list={PaymentsList}
+create={PaymentsCreate}
+edit={PaymentsEdit}
+recordRepresentation="orderNumber"
+icon={PaymentsIcon}/>
+<Resource name="Reviews" options={{label:"Reviews"}} 
+list={ReviewsList}
+create={ReviewsCreate}
+edit={ReviewsEdit}
+recordRepresentation="product"
+icon={ReviewsIcon}/>
+<Resource name="SupportTickets" options={{label:"Support Tickets"}} 
+list={SupportTicketsList}
+create={SupportTicketsCreate}
+edit={SupportTicketsEdit}
+recordRepresentation="user"
+icon={SupportTicketsIcon}/>
     <CustomRoutes noLayout>
       {/*This renders the login UI on the /auth route*/}
       {getSuperTokensRoutesForReactRouterDom(reactRouterDom)}
