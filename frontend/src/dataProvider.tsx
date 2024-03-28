@@ -8,26 +8,22 @@ import postgrestRestProvider from "@promitheus/ra-data-postgrest";
 import qs from 'qs';
 
 const fieldConfig = {
-    books: [
+    projects: [
   {
-    "field": "title",
+    "field": "projectName",
     "datatype": "String"
   },
   {
-    "field": "author",
-    "datatype": "Integer"
-  },
-  {
-    "field": "ISBN",
+    "field": "description",
     "datatype": "String"
   },
   {
-    "field": "publicationDate",
+    "field": "startDate",
     "datatype": "DateTime"
   },
   {
-    "field": "genre",
-    "datatype": "String"
+    "field": "endDate",
+    "datatype": "DateTime"
   },
   {
     "field": "status",
@@ -38,65 +34,47 @@ const fieldConfig = {
     "datatype": "Integer"
   }
 ],
-authors: [
+datasets: [
   {
-    "field": "name",
+    "field": "datasetName",
     "datatype": "String"
   },
   {
-    "field": "biography",
+    "field": "description",
     "datatype": "String"
   },
   {
-    "field": "id",
-    "datatype": "Integer"
-  }
-],
-members: [
-  {
-    "field": "memberID",
-    "datatype": "String"
-  },
-  {
-    "field": "name",
-    "datatype": "String"
-  },
-  {
-    "field": "emailAddress",
-    "datatype": "String"
-  },
-  {
-    "field": "phoneNumber",
-    "datatype": "String"
-  },
-  {
-    "field": "address",
-    "datatype": "String"
-  },
-  {
-    "field": "id",
-    "datatype": "Integer"
-  }
-],
-loans: [
-  {
-    "field": "loanID",
-    "datatype": "String"
-  },
-  {
-    "field": "memberID",
-    "datatype": "Integer"
-  },
-  {
-    "field": "bookID",
-    "datatype": "Integer"
-  },
-  {
-    "field": "issueDate",
+    "field": "creationDate",
     "datatype": "DateTime"
   },
   {
-    "field": "dueDate",
+    "field": "lastModifiedDate",
+    "datatype": "DateTime"
+  },
+  {
+    "field": "id",
+    "datatype": "Integer"
+  }
+],
+teamMembers: [
+  {
+    "field": "memberID",
+    "datatype": "Integer"
+  },
+  {
+    "field": "name",
+    "datatype": "String"
+  },
+  {
+    "field": "email",
+    "datatype": "String"
+  },
+  {
+    "field": "role",
+    "datatype": "String"
+  },
+  {
+    "field": "joinDate",
     "datatype": "DateTime"
   },
   {
