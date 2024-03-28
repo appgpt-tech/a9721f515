@@ -3,9 +3,9 @@
  import { Card, CardContent, CardHeader } from "@mui/material";
     export const Dashboard = () => (
       <Card>
-      <CardHeader title="libby" />
+      <CardHeader title="Annotator" />
       <CardContent> 
-      lib mgmt sys
+      It lets teams working with preparation of learning data for AI algorithms annotate the data appropriately
       <p>Built with{' '}
       <a
         href="https://www.appgpt.tech"
