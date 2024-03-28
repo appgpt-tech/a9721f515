@@ -15,10 +15,16 @@ title: string;
 author: number;
 
 @Column("text",{nullable: true})
-isbn: string;
+ISBN: string;
+
+@Column("date",{nullable: true})
+publicationDate: Date;
 
 @Column("text",{nullable: true})
 genre: string;
+
+@Column("text",{nullable: true})
+status: string;
 
 
 }
