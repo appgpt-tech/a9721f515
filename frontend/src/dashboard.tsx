@@ -3,9 +3,9 @@
  import { Card, CardContent, CardHeader } from "@mui/material";
     export const Dashboard = () => (
       <Card>
-      <CardHeader title="Annotator" />
+      <CardHeader title="ShopSphere Backoffice" />
       <CardContent> 
-      It lets teams working with preparation of learning data for AI algorithms annotate the data appropriately
+      an ecommerce backoffice system to support administration needs of a frontend ecommerce website that provides a seamless shopping experience for users worldwide
       <p>Built with{' '}
       <a
         href="https://www.appgpt.tech"
