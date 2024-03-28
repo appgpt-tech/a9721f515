@@ -5,7 +5,7 @@
       <Card>
       <CardHeader title="libby" />
       <CardContent> 
-      library management system
+      lib mgmt sys
       <p>Built with{' '}
       <a
         href="https://www.appgpt.tech"
