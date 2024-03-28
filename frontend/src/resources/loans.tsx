@@ -54,14 +54,15 @@ const ListActions = () => (
 );
 const loansTitle = () => {
   const record = useRecordContext();
-  return <span>loans {record ? `"${ record.loanId }"` : ""}</span>;
+  return <span>loans {record ? `"${ record.loanID }"` : ""}</span>;
 };
 
 export const loansList = () => (
       <List actions={<ListActions  />} filters={ResourceFilters} >
         <DatagridConfigurable>
-          <TextField source="loanId" />
-<ReferenceField source="memberId" reference="members"  />
+          <TextField source="loanID" />
+<ReferenceField source="memberID" reference="members"  />
+<ReferenceField source="bookID" reference="books"  />
 <DateField source="issueDate" />
 <DateField source="dueDate" /><EditButton />
 
@@ -74,9 +75,11 @@ export const loansEdit = () => (
                       <SimpleForm>
                         <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 5 }}>
                           <Grid item xs={4}>
-<TextInput source="loanId"   /></Grid>
+<TextInput source="loanID"   /></Grid>
 <Grid item xs={4}>
-<ReferenceInput source="memberId"  reference="members"   /></Grid>
+<ReferenceInput source="memberID"  reference="members"   /></Grid>
+<Grid item xs={4}>
+<ReferenceInput source="bookID"  reference="books"   /></Grid>
 <Grid item xs={4}>
 <DateInput source="issueDate"   /></Grid>
 <Grid item xs={4}>
@@ -91,9 +94,11 @@ export const loansCreate = () => (
                                     <SimpleForm>
                                       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 5 }}>
                                         <Grid item xs={4}>
-<TextInput source="loanId"   /></Grid>
+<TextInput source="loanID"   /></Grid>
 <Grid item xs={4}>
-<ReferenceInput source="memberId"  reference="members"   /></Grid>
+<ReferenceInput source="memberID"  reference="members"   /></Grid>
+<Grid item xs={4}>
+<ReferenceInput source="bookID"  reference="books"   /></Grid>
 <Grid item xs={4}>
 <DateInput source="issueDate"   /></Grid>
 <Grid item xs={4}>
@@ -106,7 +111,8 @@ export const loansCreate = () => (
 const ResourceFilters = [
       <TextInput source="q" label="Search" alwaysOn />,
 ,
-<ReferenceInput source="memberId" label="memberId" reference="members"   alwaysOn/>,
+<ReferenceInput source="memberID" label="memberID" reference="members"   alwaysOn/>,
+<ReferenceInput source="bookID" label="bookID" reference="books"   alwaysOn/>,
 ,
 ,
 
