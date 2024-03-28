@@ -5,10 +5,9 @@ import { DataSource } from "typeorm";
 import { DBConfiguration } from "./Configuration";
 import { SettingsEntity } from "./db/Settings.entity";
 //autogenerate imports based on resources
-import { booksEntity } from "./db/books.entity";
-import { authorsEntity } from "./db/authors.entity";
-import { membersEntity } from "./db/members.entity";
-import { loansEntity } from "./db/loans.entity";
+import { projectsEntity } from "./db/projects.entity";
+import { datasetsEntity } from "./db/datasets.entity";
+import { teamMembersEntity } from "./db/teamMembers.entity";
 
 export class Database {
   static dbConfiguration: DBConfiguration;
@@ -19,7 +18,7 @@ export class Database {
     let dbConfig: any = dbConfiguration as any;
     //Autogenerate entities array from resource names
 
-    dbConfig.entities = [SettingsEntity, booksEntity, authorsEntity, membersEntity, loansEntity];
+    dbConfig.entities = [SettingsEntity, projectsEntity, datasetsEntity, teamMembersEntity];
     Database.ds = new DataSource(dbConfig);
     await Database.ds.initialize();
 
@@ -29,17 +28,16 @@ export class Database {
     await Database.Seed();
   }
   static async Seed() {
-    let data: any = {"books":[{"title":"title 1","author":1,"ISBN":"ISBN 1","publicationDate":"2024-05-29T01:20:51.039Z","genre":"genre 1","status":"status 1","id":3},{"title":"title 2","author":2,"ISBN":"ISBN 2","publicationDate":"2023-10-07T23:33:33.219Z","genre":"genre 2","status":"status 2","id":88},{"title":"title 3","author":3,"ISBN":"ISBN 3","publicationDate":"2023-06-03T13:20:35.154Z","genre":"genre 3","status":"status 3","id":1},{"title":"title 4","author":4,"ISBN":"ISBN 4","publicationDate":"2023-04-14T06:02:21.054Z","genre":"genre 4","status":"status 4","id":45},{"title":"title 5","author":5,"ISBN":"ISBN 5","publicationDate":"2023-09-10T14:14:45.221Z","genre":"genre 5","status":"status 5","id":48}],"authors":[{"name":"name 1","biography":"biography 1","id":19},{"name":"name 2","biography":"biography 2","id":59},{"name":"name 3","biography":"biography 3","id":76},{"name":"name 4","biography":"biography 4","id":3},{"name":"name 5","biography":"biography 5","id":48}],"members":[{"memberID":"memberID 1","name":"name 1","emailAddress":"emailAddress 1","phoneNumber":"phoneNumber 1","address":"address 1","id":42},{"memberID":"memberID 2","name":"name 2","emailAddress":"emailAddress 2","phoneNumber":"phoneNumber 2","address":"address 2","id":94},{"memberID":"memberID 3","name":"name 3","emailAddress":"emailAddress 3","phoneNumber":"phoneNumber 3","address":"address 3","id":73},{"memberID":"memberID 4","name":"name 4","emailAddress":"emailAddress 4","phoneNumber":"phoneNumber 4","address":"address 4","id":39},{"memberID":"memberID 5","name":"name 5","emailAddress":"emailAddress 5","phoneNumber":"phoneNumber 5","address":"address 5","id":13}],"loans":[{"loanID":"loanID 1","memberID":1,"bookID":1,"issueDate":"2024-09-08T06:07:02.041Z","dueDate":"2023-11-13T12:26:11.295Z","id":1},{"loanID":"loanID 2","memberID":2,"bookID":2,"issueDate":"2024-06-07T04:27:52.353Z","dueDate":"2023-12-08T01:22:25.259Z","id":44},{"loanID":"loanID 3","memberID":3,"bookID":3,"issueDate":"2023-08-14T16:51:19.317Z","dueDate":"2023-11-18T17:05:41.773Z","id":30},{"loanID":"loanID 4","memberID":4,"bookID":4,"issueDate":"2023-04-17T19:50:05.272Z","dueDate":"2023-11-01T01:50:32.448Z","id":59},{"loanID":"loanID 5","memberID":5,"bookID":5,"issueDate":"2023-11-18T11:06:57.522Z","dueDate":"2024-06-08T11:55:17.545Z","id":45}]};
+    let data: any = {"projects":[{"projectName":"projectName 1","description":"description 1","startDate":"2023-07-27T11:51:22.994Z","endDate":"2024-03-17T00:13:59.471Z","status":"status 1","id":51},{"projectName":"projectName 2","description":"description 2","startDate":"2023-09-09T04:48:20.218Z","endDate":"2024-05-21T21:17:16.176Z","status":"status 2","id":73},{"projectName":"projectName 3","description":"description 3","startDate":"2023-08-05T11:39:02.034Z","endDate":"2024-11-16T19:49:45.007Z","status":"status 3","id":28},{"projectName":"projectName 4","description":"description 4","startDate":"2025-01-16T13:39:50.624Z","endDate":"2024-10-18T15:51:53.701Z","status":"status 4","id":67},{"projectName":"projectName 5","description":"description 5","startDate":"2023-12-19T00:50:47.141Z","endDate":"2024-11-30T12:17:52.977Z","status":"status 5","id":79}],"datasets":[{"datasetName":"datasetName 1","description":"description 1","creationDate":"2024-05-25T16:14:12.676Z","lastModifiedDate":"2024-02-19T06:29:22.644Z","id":12},{"datasetName":"datasetName 2","description":"description 2","creationDate":"2023-12-19T10:50:30.969Z","lastModifiedDate":"2024-09-18T02:42:46.363Z","id":84},{"datasetName":"datasetName 3","description":"description 3","creationDate":"2023-08-07T20:43:16.139Z","lastModifiedDate":"2024-03-28T13:18:48.559Z","id":15},{"datasetName":"datasetName 4","description":"description 4","creationDate":"2024-12-23T15:54:26.549Z","lastModifiedDate":"2024-12-17T10:58:38.703Z","id":58},{"datasetName":"datasetName 5","description":"description 5","creationDate":"2024-04-12T00:55:38.127Z","lastModifiedDate":"2023-07-11T12:35:12.134Z","id":70}],"teamMembers":[{"memberID":1,"name":"name 1","email":"email 1","role":"role 1","joinDate":"2025-02-17T19:21:57.038Z","id":77},{"memberID":2,"name":"name 2","email":"email 2","role":"role 2","joinDate":"2023-04-04T16:26:26.680Z","id":79},{"memberID":3,"name":"name 3","email":"email 3","role":"role 3","joinDate":"2024-10-22T04:02:09.052Z","id":39},{"memberID":4,"name":"name 4","email":"email 4","role":"role 4","joinDate":"2024-05-07T18:26:46.332Z","id":73},{"memberID":5,"name":"name 5","email":"email 5","role":"role 5","joinDate":"2024-09-24T20:57:06.870Z","id":30}]};
     //Autogenerate multiple such calls ie for each resource and its data object
     let isSeeded = await this.IsSeeded();
     //if (!isSeeded) {
     //forcing app recreation
     if (true){
       console.log('   Seeding database...');
-      await this.SeedResource("booksEntity", data.books);
-await this.SeedResource("authorsEntity", data.authors);
-await this.SeedResource("membersEntity", data.members);
-await this.SeedResource("loansEntity", data.loans); 
+      await this.SeedResource("projectsEntity", data.projects);
+await this.SeedResource("datasetsEntity", data.datasets);
+await this.SeedResource("teamMembersEntity", data.teamMembers); 
       await this.SeedResource("SettingsEntity", {
         settingname: "isSeeded",
         settingvalue: "true",
