@@ -60,8 +60,10 @@ const membersTitle = () => {
 export const membersList = () => (
       <List actions={<ListActions  />} filters={ResourceFilters} >
         <DatagridConfigurable>
-          <TextField source="name" />
-<TextField source="gender" />
+          <TextField source="memberID" />
+<TextField source="name" />
+<EmailField source="emailAddress" />
+<TextField source="phoneNumber" />
 <TextField source="address" /><EditButton />
 
         </DatagridConfigurable>
@@ -73,9 +75,13 @@ export const membersEdit = () => (
                       <SimpleForm>
                         <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 5 }}>
                           <Grid item xs={4}>
+<TextInput source="memberID"   /></Grid>
+<Grid item xs={4}>
 <TextInput source="name"   /></Grid>
 <Grid item xs={4}>
-<TextInput source="gender"   /></Grid>
+<TextInput source="emailAddress"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="phoneNumber"   /></Grid>
 <Grid item xs={4}>
 <TextInput source="address"   /></Grid>
                         </Grid>
@@ -88,9 +94,13 @@ export const membersCreate = () => (
                                     <SimpleForm>
                                       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 5 }}>
                                         <Grid item xs={4}>
+<TextInput source="memberID"   /></Grid>
+<Grid item xs={4}>
 <TextInput source="name"   /></Grid>
 <Grid item xs={4}>
-<TextInput source="gender"   /></Grid>
+<TextInput source="emailAddress"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="phoneNumber"   /></Grid>
 <Grid item xs={4}>
 <TextInput source="address"   /></Grid>
                                       </Grid>
@@ -100,6 +110,8 @@ export const membersCreate = () => (
 
 const ResourceFilters = [
       <TextInput source="q" label="Search" alwaysOn />,
+,
+,
 ,
 ,
 ,
