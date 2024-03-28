@@ -16,7 +16,7 @@ import { membersList, membersCreate, membersEdit} from "./resources/members";
 import { loansList, loansCreate, loansEdit} from "./resources/loans";
 import booksIcon from "@mui/icons-material/Book";
 import authorsIcon from "@mui/icons-material/Person";
-import membersIcon from "@mui/icons-material/Person";
+import membersIcon from "@mui/icons-material/Group";
 import loansIcon from "@mui/icons-material/LibraryBooks"; 
 // SUPERTOKENS
 import React from "react";
@@ -101,7 +101,7 @@ icon={membersIcon}/>
 list={loansList}
 create={loansCreate}
 edit={loansEdit}
-recordRepresentation="loanId"
+recordRepresentation="loanID"
 icon={loansIcon}/>
     <CustomRoutes noLayout>
       {/*This renders the login UI on the /auth route*/}
