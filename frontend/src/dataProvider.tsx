@@ -18,11 +18,19 @@ const fieldConfig = {
     "datatype": "Integer"
   },
   {
-    "field": "isbn",
+    "field": "ISBN",
     "datatype": "String"
   },
   {
+    "field": "publicationDate",
+    "datatype": "DateTime"
+  },
+  {
     "field": "genre",
+    "datatype": "String"
+  },
+  {
+    "field": "status",
     "datatype": "String"
   },
   {
@@ -36,8 +44,8 @@ authors: [
     "datatype": "String"
   },
   {
-    "field": "dateOfBirth",
-    "datatype": "DateTime"
+    "field": "biography",
+    "datatype": "String"
   },
   {
     "field": "id",
@@ -46,11 +54,19 @@ authors: [
 ],
 members: [
   {
+    "field": "memberID",
+    "datatype": "String"
+  },
+  {
     "field": "name",
     "datatype": "String"
   },
   {
-    "field": "gender",
+    "field": "emailAddress",
+    "datatype": "String"
+  },
+  {
+    "field": "phoneNumber",
     "datatype": "String"
   },
   {
@@ -64,11 +80,15 @@ members: [
 ],
 loans: [
   {
-    "field": "loanId",
+    "field": "loanID",
     "datatype": "String"
   },
   {
-    "field": "memberId",
+    "field": "memberID",
+    "datatype": "Integer"
+  },
+  {
+    "field": "bookID",
     "datatype": "Integer"
   },
   {
