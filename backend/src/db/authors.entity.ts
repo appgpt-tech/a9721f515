@@ -11,8 +11,8 @@ export class authorsEntity {
   @Column("text",{nullable: true})
 name: string;
 
-@Column("date",{nullable: true})
-dateOfBirth: Date;
+@Column("text",{nullable: true})
+biography: string;
 
 
 }
